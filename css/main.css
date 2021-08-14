@@ -1,0 +1,24 @@
+.gallery__flexbox {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .gallery__flexbox {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+}
+
+.gallery__img {
+  margin-bottom: 30px;
+  width: 450px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+}
+/*# sourceMappingURL=main.css.map */

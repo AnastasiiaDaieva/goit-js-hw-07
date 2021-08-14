@@ -12,3 +12,38 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const listOfImages = document.querySelector('#gallery');
+listOfImages.classList.add('gallery__flexbox');
+// function addImages(arr) {
+//
+//   const items = arr.map(elem => {
+//     const listItem = document.createElement('li');
+//     const imageItem = document.createElement('img');
+//     imageItem.setAttribute('src', elem.url);
+//     imageItem.setAttribute('alt', elem.alt);
+//     console.log(imageItem);
+//     listItem.append(imageItem);
+//     console.log(listItem);
+//     imageItem.classList.add('gallery__img');
+
+//     return listItem;
+//   });
+//   console.log(items);
+//   listOfImages.append(...items);
+
+//   return listOfImages;
+// }
+// addImages(images);
+
+// ALTERNATIVE
+
+function addImages(arr) {
+  const { url, alt } = arr;
+  return `
+  <li><img class="gallery__img" src="${url}" alt="${alt}" ></li>
+`;
+}
+
+const addListOfImages = images.map(addImages).join('');
+listOfImages.insertAdjacentHTML('beforeend', addListOfImages);
+console.log(addListOfImages);
