@@ -1,18 +1,23 @@
 let counterValue = document.querySelector('#value');
-
 console.log(counterValue);
+let value = 0;
 
 function increment() {
-  return (counterValue += 1);
+  value += 1;
+  counterValue.textContent = value;
 }
 
 function decrement() {
-  return (counterValue -= 1);
+  value -= 1;
+  counterValue.textContent = value;
 }
 
-const btnAccess = document.querySelector('[type="button"]');
-console.log(btnAccess);
+const decrAccess = document.querySelector('[data-action="decrement"]');
+console.log(decrAccess);
 
-btnAccess.addEventListener('click', event => {
-  console.log(event);
-});
+const incrAccess = document.querySelector('[data-action="increment"]');
+console.log(incrAccess);
+
+decrAccess.addEventListener('click', decrement);
+
+incrAccess.addEventListener('click', increment);
