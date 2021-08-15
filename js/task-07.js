@@ -4,7 +4,7 @@ const getSpan = document.querySelector('#text');
 console.log(getInput);
 console.log(getSpan.textContent);
 
-getInput.addEventListener('change', changeSize);
+getInput.addEventListener('input', changeSize);
 
 function changeSize(event) {
   let currentFontSize = event.target.value;
