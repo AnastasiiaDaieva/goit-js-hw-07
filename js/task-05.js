@@ -3,6 +3,6 @@ let inputAccess = document.querySelector('#name-input');
 
 inputAccess.addEventListener('input', e => {
   e.target.value === ''
-    ? (outputAccess = 'незнакомец')
+    ? (outputAccess.textContent = 'незнакомец')
     : (outputAccess.textContent = e.target.value);
 });
