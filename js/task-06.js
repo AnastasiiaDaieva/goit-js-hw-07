@@ -15,7 +15,7 @@ function checkSymbols() {
   ) {
     inputAccess.classList.remove('valid');
     inputAccess.classList.add('invalid');
-  } else if (inputAccess.value.length < 6) {
+  } else if (inputAccess.value.length !== 6) {
     inputAccess.classList.add('invalid');
   } else {
     inputAccess.classList.add('valid');
