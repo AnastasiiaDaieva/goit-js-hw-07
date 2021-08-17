@@ -16,12 +16,11 @@ function addToList() {
     const ingredItem = document.createElement('li');
     console.log(ingredItem);
     ingredItem.textContent = elem;
-    listOfIngr.append(ingredItem);
-
     return ingredItem;
   });
+  listOfIngr.append(...items);
 
-  console.log(items);
+  // console.log(items);
   return listOfIngr;
 }
 
