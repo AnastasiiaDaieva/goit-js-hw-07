@@ -1,25 +1,18 @@
 const inputAccess = document.querySelector('#validation-input');
 
-function checkSymbols() {
-  //   console.log(inputAccess.value.length);
-  if (
-    inputAccess.value.length === 6 &&
-    inputAccess.classList.contains('invalid')
-  ) {
-    inputAccess.classList.remove('invalid');
+const dataLength = parseInt(
+  document.querySelector('#validation-input').dataset.length,
+);
 
-    inputAccess.classList.add('valid');
-  } else if (
-    inputAccess.value.length !== 6 &&
-    inputAccess.classList.contains('valid')
-  ) {
+function checkSymbols() {
+  let value = inputAccess.value.length;
+  if (value !== dataLength) {
+    inputAccess.classList.add('invalid');
     inputAccess.classList.remove('valid');
-    inputAccess.classList.add('invalid');
-  } else if (inputAccess.value.length !== 6) {
-    inputAccess.classList.add('invalid');
-  } else {
-    inputAccess.classList.add('valid');
+    return;
   }
+  inputAccess.classList.add('valid');
+  inputAccess.classList.remove('invalid');
 }
 
 inputAccess.addEventListener('blur', checkSymbols);
